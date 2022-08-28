@@ -1,0 +1,9 @@
+ //impoto bootsrap da node-modules li segno"~"punta direttamente alla cartella nodemoduls
+ @import'~bootstrap/scss/bootstrap.scss';
+//importo il file colori nel file generali
+ @import'colori.scss';
+ //importo fonte da node-modules
+ @import'~@fontsource/fira-sans/index.css';
+ body {
+    font-family: "Fira Sans", sans-serif;
+  }
