@@ -1,11 +1,14 @@
 <template>
-<div class="card">
-    <img :src="album.poster" alt="">
-    <h3>{{album.author}}</h3>-->
-    <h4>NEW JERSY</h4>
-    <span>anno</span>
-</div>
-  
+    <div class="Cont_Card">
+        <div class="card text-center" style="width: 10rem;" >
+            <img class="card-img-top" :src="album.poster" :alt="album.poster"/>
+            <h3>{{album.title}}</h3>
+            <h4>{{album.author}}</h4>
+            <span>{{album.year}}</span>
+        </div>
+    
+    </div>
+
 </template>
 
 <script>
@@ -19,6 +22,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="Scss">
+      
+      
+     
+     
 
 </style>

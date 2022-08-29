@@ -21,4 +21,6 @@ export default {
 
 <style lang="scss">
   @import "@/style/generali.scss";
+   
+
 </style>

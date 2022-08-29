@@ -1,9 +1,12 @@
 <template>
-  <nav class="navbar navbar-light bg-dark">
+  <div class="header">
+    <nav class="navbar navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar  ABCDEFGHIMNPSQRWXT</a>
+        <img  src="../assets/logo.png" alt=""  class="img-thumbnail">
       </div>
     </nav>
+  </div>
+  
 </template>
 
 <script>
@@ -13,6 +16,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang=" scss">
+    .header{
+      height: 100px;
+    }
 
 </style>

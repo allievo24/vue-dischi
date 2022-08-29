@@ -38,6 +38,22 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  @import "@/style/generali.scss";
+       
+     .container{
+        display: flex;
+        flex-wrap: wrap;
+        border: solid 2px blue;
+      
+      
+        
+     }
+       .Cont_Card{
+        width: calc(100% / 5 );
+        margin: auto;
+        
+       
+      }
+      
 </style>
