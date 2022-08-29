@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <SingolAlbum v-for ="(album, index) in ListaAlbum " :key="index" :album="ListaAlbum"/>
+        <SingolAlbum v-for ="(album, index) in ListaAlbum " :key="index" :album="album"/>
 
     </div>
   
@@ -23,8 +23,8 @@ export default {
     },
     created(){
         axios.get(this.endPoint)
-        .then(response =>{
-            this.ListaAlbum =response.data;
+        .then(res =>{
+            this.ListaAlbum =res.response.data;
 
         })
         .catch(err =>{
