@@ -21,6 +21,15 @@ export default {
 
 <style lang="scss">
   @import "@/style/generali.scss";
-   
+   .navbar{
+      height: 100px;
+      .container-fluid{
+        img{
+         width : 5%;
+      }
+      }
+      
+      
+    }
 
 </style>
