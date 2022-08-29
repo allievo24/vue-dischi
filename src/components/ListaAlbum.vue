@@ -23,8 +23,8 @@ export default {
     },
     created(){
         axios.get(this.endPoint)
-        .then(res =>{
-            this.ListaAlbum =res.response.data;
+        .then(resulta =>{
+            this.ListaAlbum = resulta.data.response;
 
         })
         .catch(err =>{
