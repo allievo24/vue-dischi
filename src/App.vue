@@ -1,35 +1,37 @@
 <template>
   <div id="app">
-    <MyHeader/>
-    <ListaAlbum/>
+    <MyHeader @scelta="genere"/>
+    <ListaAlbum />
   </div>
 </template>
 
 <script>
-import MyHeader from './components/MyHeader.vue';
-import ListaAlbum from './components/ListaAlbum.vue';
+import MyHeader from "./components/MyHeader.vue";
+import ListaAlbum from "./components/ListaAlbum.vue";
 
 export default {
   name: "App",
   components: {
     MyHeader,
-    ListaAlbum
-
+    ListaAlbum,
   },
+  data(){
+      return {
+        genere:''
+      }
+    }
 };
 </script>
 
 <style lang="scss">
-  @import "@/style/generali.scss";
-   .navbar{
-      height: 100px;
-      .container-fluid{
-        img{
-         width : 5%;
-      }
-      }
-      
-      
+@import "@/style/generali.scss";
+.navbar {
+  height: 100px;
+  .container-fluid {
+        height: 100%;
+    img {
+      height: 100%;
     }
-
+  }
+}
 </style>

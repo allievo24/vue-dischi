@@ -18,19 +18,24 @@ export default {
     data(){
         return{
             ListaAlbum: [],
-            endPoint: 'https://flynn.boolean.careers/exercises/api/array/music'
+            endPoint: 'https://flynn.boolean.careers/exercises/api/array/music',
+            loadInProgress:true
         }
     },
     created(){
         axios.get(this.endPoint)
         .then(resulta =>{
             this.ListaAlbum = resulta.data.response;
+            this.loadInProgress=false
+
 
         })
         .catch(err =>{
             console.log(err);
+            this.loadInProgress=false
+ 
 
-        })
+        });
 
         
     },
