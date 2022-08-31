@@ -5,11 +5,10 @@
         <img  src="../assets/logo.png" alt=""  class="img-thumbnail">
       </div>
     </nav>
-    <select @change="$emit('scelta,')" v-model="genere" class="form-select" aria-label="Default select example">
+    <select @chenge="$emit('cambiaGenere' , genereSelezionato)" v-model="genereSelezionato" class="form-select" aria-label="Default select example">
       <option selected>Genere</option>
-      <option value="1">Jazz</option>
-      <option value="2">Rock</option>
-      <option value="3">Pop</option>
+      <option v-for="(genere, index ) in ListaGeneri" :key="index" :value="genere">{{genere}}</option>
+      
    </select>
   </div>
   
@@ -18,13 +17,14 @@
 <script>
 export default {
     nome:'MyHeader',
-    data(){
-      return {
-        genere:''
-      }
-    },
+    
     props:{
-      ListaAlbum:Array
+      ListaGeneri:Array
+    },
+    data(){
+      return{
+        genereSelezionato :''
+      }
     }
 
 }

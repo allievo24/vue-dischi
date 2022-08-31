@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MyHeader @scelta="genere"/>
-    <ListaAlbum />
+    <MyHeader :ListaGeneri="ListaGeneri" @cambiaGenere="ricerca" />
+    <ListaAlbum @generiReady="getListaGeneri" :genereScelto="genereScelto"/>
   </div>
 </template>
 
@@ -16,10 +16,25 @@ export default {
     ListaAlbum,
   },
   data(){
-      return {
-        genere:''
-      }
+    return{
+      ListaGeneri:[],
+      genereSclto : ''
     }
+  },
+
+  methods:{
+    getListaGeneri(allgeneri){
+        this.ListaGeneri = allgeneri;
+    },
+    ricerca(ricercaGenere){
+      this.genereScelto = ricercaGenere
+
+    },
+
+
+
+
+  }
 };
 </script>
 

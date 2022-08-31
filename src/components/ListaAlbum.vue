@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <SingolAlbum v-for ="(album, index) in ListaAlbum " :key="index" :album="album"/>
+        <SingolAlbum v-for ="(album, index) in filtrAlbum " :key="index" :album="album"/>
 
     </div>
   
@@ -11,15 +11,37 @@ import axios from 'axios';
 import SingolAlbum from './SingolAlbum.vue'
 
 export default {
-    name: 'ListaAlbum',
+    name: "ListaAlbum",
     components:{
       SingolAlbum
     },
+    props:{
+        genereScelto : String
+    },
     data(){
         return{
+            genere:[],
             ListaAlbum: [],
             endPoint: 'https://flynn.boolean.careers/exercises/api/array/music',
             loadInProgress:true
+        };
+    },
+    computed:{
+        filtrAlbum(){
+            if(this.genereScelto == ''){
+                return this.ListaAlbum;
+            }else{
+               const listaFiltrata = this.ListaAlbum.filter(album =>{
+                   if(album.genre == this.genereSCelto){
+                    return true;
+                   }else{
+                     return false;
+                   }
+               });
+               
+                return listaFiltrata;
+            }
+
         }
     },
     created(){
@@ -27,7 +49,15 @@ export default {
         .then(resulta =>{
             this.ListaAlbum = resulta.data.response;
             this.loadInProgress=false
-
+            
+            this.ListaAlbum.forEach(album => {
+                if(!this.genere.includes(album.genre)){
+                    this.genere.push(album.genre)
+                }
+                
+            });
+//notifico al padre app vue la lista dei generi
+                this.$emit('generiReady',this.genere);
 
         })
         .catch(err =>{
